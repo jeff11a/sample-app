@@ -10,5 +10,6 @@ def main():
     return render_template("index.html")
 
 if __name__ == "__main__":
+    #Port 5050 because Jenkins will be using this app which is already using the port 8080
     sample.run(host="0.0.0.0", port=5050)
     
