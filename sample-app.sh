@@ -10,8 +10,15 @@ cp -r static/* tempdir/static/.
 
 echo "FROM python" >> tempdir/Dockerfile
 echo "RUN pip install flask" >> tempdir/Dockerfile
+
+#The original commands of the document weren't working for me so I share this simple solution
+#Original
+# echo "COPY ./static /home/myapp/static/" >> tempdir/Dockerfile
+# echo "COPY ./templates /home/myapp/templates/" >> tempdir/Dockerfile
+#Modified
 echo "COPY  ./static/. /home/myapp/static/" >> tempdir/Dockerfile
 echo "COPY  ./templates/. /home/myapp/templates/" >> tempdir/Dockerfile
+
 echo "COPY  sample_app.py /home/myapp/" >> tempdir/Dockerfile
 echo "EXPOSE 5050" >> tempdir/Dockerfile
 echo "CMD python /home/myapp/sample_app.py" >> tempdir/Dockerfile
