@@ -1,0 +1,1 @@
+Following the DevNet Associate PDF, I was unable to make the dockerfile copy the files as expected and this was the solution that work for me. 
